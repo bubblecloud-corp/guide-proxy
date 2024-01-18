@@ -14,12 +14,10 @@
       document
         .getElementById("sendMessageButton")
         .addEventListener("click", function () {
-          chrome?.runtime?.sendMessage(
-            { action: "YourCustomAction" },
-            function (response) {
-              console.log("Message sent to extension:", response);
-            }
-          );
+          chrome.runtime.sendMessage({
+            action: "액션!!!!!!!",
+            showPanel: true,
+          });
         });
     </script>
   </body>
