@@ -19,10 +19,16 @@
             guide_id: "guide_1234",
           });
 
-          document.dispatchEvent("bubb", {
-            token: "토큰값 원투쓰리",
-            guide_id: "guide_1234",
+          var customEvent = new Event("bubb", {
+            bubbles: true, // 이벤트가 버블링되도록 설정
+            cancelable: true, // 이벤트가 취소 가능하도록 설정
           });
+
+          // 이벤트 객체에 원하는 데이터 추가
+          customEvent.token = "토큰값 원투쓰리";
+          customEvent.guide_id = "guide_1234";
+          document.dispatchEvent(customEvent);
+
           window.location.href = "http://www.naver.com";
         });
     </script>
